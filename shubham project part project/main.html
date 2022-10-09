@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xplore</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&family=Space+Mono:wght@700&family=Trispace:wght@100&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bg.css">
+
+</head>
+
+<body>
+    <!-- <h1>hey</h1> -->
+    <video src="imgs and vids/Solar System_Trim.mp4" autoplay muted id="bgvid" preload="auto"></video>
+    <div id="blackfilter"></div>
+    <header>
+        <img src="imgs and vids/xplore logo 1.png" alt="" id="logo">
+        <nav id="navbar">
+            <ul>
+                <li><a href="#" id="home" onclick="welcome1()">Home</a></li>
+                <li><a href="#" id="home" onclick="login()">Login</a></li>
+              
+                <li> <a href="#" id="reg" onclick="register()">Register</a></li>
+                <li> <a href="">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <section>
+        <h1 id="welcome">Welcome to Xplore</h1>
+        <p id="typeeffect"> </p>
+    </section>
+    <section id="secloginform">
+        <div class="centre">
+
+            <form action="" id="loginform">
+                <div>
+                    <span>Username:</span><br> <input type="text" class="loginbox" id="logname" placeholder="Enter Username">
+                </div>
+                <div>
+                    <span>Password:</span><br> <input type="password" class="loginbox" id="logpass" placeholder="Enter Password">
+                </div>
+                <br>
+                <div>
+                    
+                    <span><input type="submit" class="loginbt"></span>
+                    <span><input type="reset" class="loginbt"></span>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section id="secregform">
+        
+        <form action="" id="regform">
+            <div>
+                <span>Username:</span> <input type="text" class="regbox" id="regname" placeholder="Enter Username">
+            </div>
+            <div>
+                <span>Password:</span> <input type="password" class="regbox" id="regpass" placeholder="Enter Password">
+            </div>
+            <br>
+            <!-- <div>
+                <span>Confirm password:</span> <input type="password" class="login" id="confirm-pass" placeholder="confirm your Password">
+            </div> -->
+            <div>
+
+                <input type="submit" class="loginbt">
+                <input type="reset" class="loginbt">
+            </div>
+        </form>
+    </section>
+
+    <script>
+        var i = 0;
+        var txt = 'Explore  the wonders of space exploration. Investigate Planets, Asteroids, Cozmets, and the Sun.';
+        var speed = 40;
+        window.onload = setTimeout(function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("typeeffect").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+                document.getElementById('log').onclick = 'break';
+                
+            }
+        },4800);
+
+        function login(){
+            document.getElementById("typeeffect").style.display = "none";
+            document.getElementById("welcome").style.display = "none";
+            document.getElementById("secloginform").style.display = "flex";
+            document.getElementById("secregform").style.display = "none";
+            // document.getElementById("secloginform").style.display = "block";
+        }
+
+        function welcome1() {
+            document.getElementById("typeeffect").style.display = "block";
+            document.getElementById("welcome").style.display = "block";
+            document.getElementById("secloginform").style.display = "none";
+            document.getElementById("secregform").style.display = "none";
+            // document.getElementById("typeeffect").innerHTML="";
+
+        }
+
+        function register() {
+            document.getElementById("typeeffect").style.display = "none";
+            document.getElementById("welcome").style.display = "none";
+            document.getElementById("secloginform").style.display = "none";
+            document.getElementById("secregform").style.display = "flex";
+            // document.getElementById("typeeffect").innerHTML="";
+
+        }
+    </script>
+    <script>
+        anime.timeline({loop: false})
+  .add({
+    targets: '#welcome',
+    scale: [14,1],
+    opacity: [0,1],
+    easing: "easeOutCirc",
+    duration: 5000,
+    delay: (el, i) => 800 * i
+  })
+    </script>
+</body>
+
+</html>
