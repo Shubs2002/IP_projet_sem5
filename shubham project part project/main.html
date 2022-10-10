@@ -14,10 +14,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
         integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="bg.css">
-
+    <script src="script.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.11.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.11.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.11.0/firebase-auth-compat.js"></script>
+    <script src="loginReg.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <!-- <h1>hey</h1> -->
     <video src="imgs and vids/Solar System_Trim.mp4" autoplay muted id="bgvid" preload="auto"></video>
@@ -27,10 +30,9 @@
         <nav id="navbar">
             <ul>
                 <li><a href="#" id="home" onclick="welcome1()">Home</a></li>
-                <li><a href="#" id="home" onclick="login()">Login</a></li>
-
-                <li> <a href="#" id="reg" onclick="register()">Register</a></li>
-                <li> <a href="">About Us</a></li>
+                <li><a href="#" id="home" onclick="login()" id="login">Login</a></li>
+                <li><a href="#" id="reg" onclick="register()">Register</a></li>
+                <li><a href="http://127.0.0.1:5500/profile_page.html">About Us</a></li>
             </ul>
         </nav>
     </header>
@@ -47,11 +49,10 @@
     </section>
     <section id="secloginform">
         <div class="centre">
-
             <form action="" id="loginform">
                 <div>
                     <span>Username:</span><br> <input type="text" class="loginbox" id="logname"
-                        placeholder="Enter Username">
+                        placeholder="Enter Your Email">
                 </div>
                 <div>
                     <span>Password:</span><br> <input type="password" class="loginbox" id="logpass"
@@ -59,17 +60,16 @@
                 </div>
                 <br>
                 <div>
-                    <span><input type="submit" class="loginbt"></span>
+                    <span><button type="button" class="loginbt" onclick="logIn()">Login</button></span>
                     <span><input type="reset" class="loginbt"></span>
                 </div>
             </form>
         </div>
     </section>
     <section id="secregform">
-
         <form action="" id="regform">
             <div>
-                <span>Username:</span> <input type="text" class="regbox" id="regname" placeholder="Enter Username">
+                <span>Username:</span> <input type="text" class="regbox" id="regname" placeholder="Enter Your Email">
             </div>
             <div>
                 <span>Password:</span> <input type="password" class="regbox" id="regpass" placeholder="Enter Password">
@@ -79,13 +79,11 @@
                 <span>Confirm password:</span> <input type="password" class="login" id="confirm-pass" placeholder="confirm your Password">
             </div> -->
             <div>
-
-                <input type="submit" class="loginbt">
+                <button type="button" class="loginbt" onclick="signUp()">Register</button>
                 <input type="reset" class="loginbt">
             </div>
         </form>
     </section>
-
     <script>
         // var i = 0;
         // var txt = 'Explore  the wonders of space exploration. Investigate Planets, Asteroids, Cozmets, and the Sun.';
@@ -99,60 +97,6 @@
 
         //     }
         // }
-
-        function login() {
-            document.getElementById("typeeffect").style.display = "none";
-            document.getElementById("welcome").style.display = "none";
-            document.getElementById("secloginform").style.display = "flex";
-            document.getElementById("secregform").style.display = "none";
-            loginRegAnime.play()
-            // document.getElementById("secloginform").style.display = "block";
-        }
-
-        function welcome1() {
-            document.getElementById("typeeffect").style.display = "block";
-            document.getElementById("welcome").style.display = "block";
-            document.getElementById("secloginform").style.display = "none";
-            document.getElementById("secregform").style.display = "none";
-            // typeWriter()
-
-            // document.getElementById("typeeffect").innerHTML="";
-
-        }
-
-        function register() {
-            document.getElementById("typeeffect").style.display = "none";
-            document.getElementById("welcome").style.display = "none";
-            document.getElementById("secloginform").style.display = "none";
-            document.getElementById("secregform").style.display = "flex";
-            loginRegAnime.play()
-            // document.getElementById("typeeffect").innerHTML="";
-        }
-        let textRevealEffect = anime({
-            targets: '.words',
-            opacity: 1,
-            delay: anime.stagger(100, { start: 5000, easing: 'linear', from: 'start' })
-        })
-        window.onload = textRevealEffect.play()
-    </script>
-    <script>
-        anime.timeline({ loop: false })
-            .add({
-                targets: '#welcome',
-                scale: [14, 1],
-                opacity: [0, 1],
-                easing: "easeOutCirc",
-                duration: 5000,
-                delay: (el, i) => 800 * i
-            })
-        let loginRegAnime = anime({
-            targets: ["#secloginform", "#secregform"],
-            scale: [1.5, 1],
-            opacity: 1,
-            duration: 200,
-            easing: 'easeInOutSine'
-        })
-
     </script>
 </body>
 
