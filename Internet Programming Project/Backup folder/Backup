@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Xplore</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="website-desc"
+        style="position: absolute;left:50%;top:15%;transform: translateX(-50%);text-align: center;">
+        <p style="font-family: monospace;">
+            Welcome to <b>Xplore</b>. Curious to know about outter space? You've come to the right place.
+            We have ample of information about our<span style="color: #EE4B2B;"><b> Galaxy</b></span>, <span
+                style="color: #EE4B2B;"><b>Black Holes</b></span>,
+            <span style="color: #EE4B2B;"><b>Stars</b></span> and many more.
+        </p>
+    </div>
+    <div class="solar-tut-container">
+        <div class="solar-system-section">
+            <img src="./images-videos/solar-system.jpg" width="730px" height="450px" alt="solar-system-image"
+                usemap="#solar-map">
+            <area shape="rect" coords="645, 521, 661, 536" href="#" alt="">
+            <area shape="rect" coords="666, 513, 683, 530" href="#" alt="">
+            <area shape="rect" coords="690, 500, 712, 525" href="#" alt="">
+        </div>
+        <div class="tutorial-panel">
+            <p class="tutorial" style="font-family: monospace;font-size:large;margin:1rem;text-align: center;">The left
+                side image represents <span style="color: #EE4B2B;">Milky Way</span> map use mouse to navigate through
+                planets and
+                know about them. <span style="color: #EE4B2B;">Click </span>on the planet to view it's detailed
+                Infrormation.
+            </p>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
+
+<!--
+    const mysql = require('mysql')
+    const con = mysql.createConnection({
+        host : 'localhost',
+        user : 'root',
+        password : 'Dhamu@2002',
+        database : 'IP'
+    })
+
+function registration(con, name, mobNo, password) {
+    con.connect((err) => {
+        if (err) throw err
+        con.query('insert into LoginReg values("' + name +
+        '", ' + mobNo + ", " + '"' + password + '");', (err, result) => {
+            if(err) throw err
+            console.log('Registration success!')
+        })
+        con.end()
+    })
+}
+
+function login(con, name, password) {
+    con.connect((err) => {
+        if(err) throw err
+        con.query('select name from loginreg where name = "' + name + '" and password = "' + password + '";',
+        (err, result) => {
+            if(err) throw err
+            console.log(result)
+        })
+        con.end()
+    })
+}
+-->
+<!--Using Localstorage-->
+<!--
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Registration</title>
+</head>
+<body>
+    <div id="container">
+        <div id="login-form">
+            <fieldset id="login-fieldset">
+                <legend>Login</legend>
+                <label id="login-name">Name:</label>
+                <input type="text" id="log-name-input">
+                <label id="login-password">Password:</label>
+                <input type="password" id="log-password-input">
+                <button type="" id="login-btn">Login</button>
+            </fieldset>
+        </div>
+        <div id="register-form">
+            <fieldset id="registration-fieldset">
+                <legend>Registration Form</legend>
+                <label id="reg-name">Name:</label>
+                <input type="text" id="reg-name-txt">
+                <label id="reg-password">Password:</label>
+                <input type="password" id="reg-password-input">
+                <button type="" id="register-btn">Register</button>
+            </fieldset>
+        </div>
+    </div>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #container  {
+            width: fit-content;
+            height: fit-content;
+            border: 2px solid black; 
+            border-radius: 0.5rem;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            flex: 50%;
+            gap: 20px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #login-fieldset {
+            display: grid;
+            row-gap: 15px;
+            width: max-content;
+            height: max-content;
+            padding: 10px;
+            border-radius: 0.5rem;
+        }
+        #registration-fieldset {
+            display: grid;
+            row-gap: 15px;
+            width: max-content;
+            height: max-content;
+            padding: 10px;
+            border-radius: 0.5rem;
+        }
+    </style>
+    <script type="text/javascript" src="/Backup folder/Test.js"></script>
+</body>
+</html>
+-->
+<!--
+    document.getElementById('login-btn').addEventListener('click', (e) => {
+    e.preventDefault()
+    
+})
+document.getElementById('register-btn').addEventListener('click', (e) => {
+    e.preventDefault()
+    let name = document.getElementById('reg-name-txt').value
+    let pass = document.getElementById('reg-password-input').value
+    localStorage.setItem(name, pass)
+})
+document.getElementById('login-btn').addEventListener('click', (e) => {
+    e.preventDefault()
+    let name = document.getElementById('log-name-input').value
+    let pass = document.getElementById('log-password-input').value
+    if(localStorage.getItem(name) === pass) alert("login success")
+    else alert('login failed!')
+})
+-->

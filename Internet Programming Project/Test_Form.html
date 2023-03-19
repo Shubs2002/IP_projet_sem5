@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="/loginReg.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.11.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.11.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.11.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+    <form action="#">
+        <fieldset id="login-field">
+            <legend>Login</legend>
+            <input type="text" name="email" id="email" placeholder="Email">
+            <input type="password" name="password" id="password" placeholder="Password">
+            <button type="button" id="login-btn" onclick="login()">Login</button>
+        </fieldset>
+        <fieldset id="Registration-field">
+            <legend>Registration</legend>
+            <input type="text" name="email" id="email-reg" placeholder="Email">
+            <input type="password" name="password" id="password-reg" placeholder="Password">
+            <button type="button" id="register-btn" onclick="register()">Register</button>
+        </fieldset>
+        <label id="DB-msg"></label>
+    </form>
+</body>
+</html>

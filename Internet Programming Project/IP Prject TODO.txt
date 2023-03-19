@@ -1,0 +1,5 @@
+1) IMPLEMENT A WEB PAGE USING HTML5 AND CSS3 (1-2PTS):
+	a) Website's layout and appearance will be done using HTML5 & CSS3, Responsiveness will also be done by CSS3(If time permits).
+	b) Interactive Webpages will be implemented using Javascript
+2) FORM DESIGN AND CLIENT-VALIDATION USING JAVASCRIPT IN HTML5(3 - 4 PTS):
+	a) Bookmarks of the users will be stored as and example to show JDBC connectivity using JavaScript

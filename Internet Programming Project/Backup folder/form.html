@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="container">
+            <form action="" id="test-form">
+                <label for="item-name">Item Name:</label>
+                <input type="text" name="item-name" id="item-name">
+                <button id="add">Add</button>
+            </form>
+            <h2 id="item-list-header">Items are:</h2>
+            <table id="items">
+                <tr class="list">
+                    <th>Item Name</th>
+                </tr>
+            </table>
+            <style>
+                table {
+                    border: 2px solid black;
+                    border-radius: 0.5rem;
+                }
+                .list {
+                    font-family: sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    letter-spacing: 2px;
+                }
+                .list:nth-child(even) {
+                    background-color: rgba(79, 79, 79, 0.2);
+                }
+
+            </style>
+        </div>
+        <script>
+            let addBtn = document.getElementById('add')
+            addBtn.addEventListener('click', (e) => {
+                e.preventDefault()
+                let count = document.getElementsByTagName('td')
+                let itemName = document.getElementById('item-name').value.toUpperCase()
+                let tableRow = document.createElement('tr')
+                let tabledata = document.createElement('td')
+                let deleteBtn = document.createElement('button')
+                deleteBtn.textContent = 'X'
+                deleteBtn.style.backgroundColor = 'red'
+                deleteBtn.style.color = 'white'
+                tabledata.textContent = itemName
+                tableRow.className = 'list'
+                tableRow.appendChild(tabledata)
+                tableRow.appendChild(deleteBtn)
+                document.getElementById('items').appendChild(tableRow)
+                document.getElementById('item-list-header').innerHTML = String('Items are: ' + count.length)
+                deleteBtn.addEventListener("click", (e) => {
+                    e.preventDefault()
+                    deleteBtn.parentElement.remove()
+                    let count = document.getElementsByTagName('td').length
+                    document.getElementById('item-list-header').innerHTML = String('Items are: ' + count)
+                })
+            })
+        </script>
+    </body>
+</html>
